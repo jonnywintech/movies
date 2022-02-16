@@ -12,7 +12,7 @@
           <a class="nav-link" href="/movies">Movies</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/Create">Create</a>
+          <a class="nav-link" href="/movies/create">Create</a>
         </li>
         <li class="nav-item">
           <a class="nav-link disabled" href="#">Disabled</a>

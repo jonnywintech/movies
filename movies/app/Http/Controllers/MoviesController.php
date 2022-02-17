@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreMovieRequest;
 use Illuminate\Support\Facades\DB;
 use App\Models\Movie;
 use Illuminate\Http\Request;
@@ -29,30 +30,23 @@ class MoviesController extends Controller
         return view('create');
     }
 
-    public function store(Request $request)
+    public function store(StoreMovieRequest $request)
     {
         DB::listen(function ($query) {
             info($query->sql);
         });
 
-        // $post = new Post();
-        // $post->title = $request->get('title', '');
-        // $post->body = $request->get('body', '');
-        // $post->is_published = $request->get('is_published', false);
-        // $post->save();
 
-        // $data = [
-        //     'title' => $request->get('title', ''),
-        //     'body' => $request->get('body', ''),
-        //     'is_published' => $request->get('is_published', false),
-        // ];
+        $data = $request->validated();
         info($request->all());
-        $data = $request->only(['title', 'genre', 'director','year','storyline']);
+        $post = Movie::create($data);
         info($data);
         $movie = Movie::create($data);
 
         // return view('post', compact('post'));
         return redirect("/movies/$movie->id");
     }
-    
+
+
+
 }

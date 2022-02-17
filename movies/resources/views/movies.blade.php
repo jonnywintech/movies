@@ -3,7 +3,8 @@
 
 @section('content')
 
-<h1>List of Movies</h1>
+<div class="container">
+    <h1>List of Movies</h1>
 <ul class="list-group"></ul>
 @foreach ($movies as $movie)
     <a href="/movies/{{$movie->id}}">
@@ -11,4 +12,5 @@
     </a>
     @endforeach
 </ul>
+</div>
 @endsection

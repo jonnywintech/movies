@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('title');
             $table->string('genre');
             $table->string('director');
-            $table->date('year');
+            $table->unsignedInteger('year');
             $table->text('storyline');
             $table->timestamps();
         });

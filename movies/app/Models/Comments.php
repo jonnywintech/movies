@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Movie extends Model
+class Comments extends Model
 {
     use HasFactory;
 
     protected $fillable = [
-        'title', 'genre', 'director','year','storyline'
+        'content',
+        'post_id',
     ];
-
-    public function comments()
-    {
-        return $this->hasMany(Comments::class);
-    }
 }

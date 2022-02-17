@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreMovieRequest;
 use Illuminate\Support\Facades\DB;
 use App\Models\Movie;
+use App\Models\Comments;
 use Illuminate\Http\Request;
 
 class MoviesController extends Controller
@@ -20,8 +21,10 @@ class MoviesController extends Controller
     {
         // $post = Post::where('id', $id)->first();
         $movie = Movie::findOrFail($id);
+        $comments = Comments::all();
 
-        return view('movie', compact('movie')); // [ 'post' => $post]
+
+        return view('movie', compact('movie','comments')); // [ 'post' => $post]
     }
 
 
@@ -46,6 +49,7 @@ class MoviesController extends Controller
         // return view('post', compact('post'));
         return redirect("/movies/$movie->id");
     }
+
 
 
 

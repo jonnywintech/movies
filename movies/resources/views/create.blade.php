@@ -15,7 +15,7 @@
 @endif --}}
 <form method="POST" action="/movies">
     @csrf
-     <div class="container">
+     <div class="container col-6">
       <div class="form-group">
         <label for="formGroupExampleInput">enter Name of Movie</label>
         <input name = 'title'type="text" value="{{ old('title') }}" request class="form-control @error('title') alert-danger @enderror" id="formGroupExampleInput" placeholder="RAMBO">

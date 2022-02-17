@@ -1,4 +1,4 @@
-php artisan make:migrateion create_movies_table
+php artisan make:migration create_movies_table
 php artisan migrate ;
 
 php artisan make:controller MoviesController
